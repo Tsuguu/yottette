@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>よってってCAFFE｜販路拡大ダッシュボード</title>
+<title>よってってCAFFE｜取引先一覧</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
@@ -90,17 +90,14 @@ footer{color:var(--mute);font-size:11.5px;text-align:center;margin-top:30px}
 }
 </style>
 </head>
+
 <body>
 <div class="wrap">
 <header>
-  <div class="eyebrow">Partners &amp; Sales Channels</div>
+  <div class="eyebrow">Partners</div>
   <div class="brandrow">
-    <div><h1>よってってCAFFE｜販路拡大ダッシュボード</h1>
-    <p class="sub">取引先と、ECチャネルごとの価格・利益をまとめて見るための画面です</p></div>
-  </div>
-  <div class="tabs" role="tablist">
-    <button class="tab" role="tab" aria-selected="true" data-tab="p1">取引先</button>
-    <button class="tab" role="tab" aria-selected="false" data-tab="p2">チャネル価格</button>
+    <div><h1>よってってCAFFE｜取引先一覧</h1>
+    <p class="sub">取引先を業態・エリアで見るための画面です</p></div>
   </div>
 </header>
 
@@ -118,52 +115,17 @@ footer{color:var(--mute);font-size:11.5px;text-align:center;margin-top:30px}
   </div>
 </section>
 
-<section class="panel" id="p2">
-  <div class="stats" id="pstats"></div>
-  <div class="note"><b>産直アウルについて：</b>販売手数料（19.5%）および送料は、いずれも当社（よってってCAFFE）が負担します。表示の販売価格から手数料・送料を差し引いた金額が、実際の手取りになります。</div>
-  <div class="note" style="background:#F3F6EF;border-color:#D6E3C8;color:#5a6b46">産直アウルの販売価格、ふるさと納税の寄付額／納入金額（税込）は、最新データの反映待ちです（表内の「データ待ち」セル）。データをいただき次第、確定値に差し替えます。</div>
-  <div class="sec">
-    <h2><span class="secnum">04</span>単品｜チャネル別価格</h2>
-    <div style="overflow-x:auto">
-    <table>
-      <thead><tr>
-        <th class="l">商品名</th><th>規格</th><th>卸価格</th><th>自社HP</th><th>産直アウル</th><th>ふるさと納税<br>寄付額</th><th>ふるさと納税<br>納入(税込)</th>
-      </tr></thead>
-      <tbody id="ptable"></tbody>
-    </table>
-    </div>
-    <p class="count" style="margin-top:8px">卸価格＝取引先向け納品価格／自社HP＝yottette-caffe.com の税込価格。「よってってシードル」は自社HP「お酒」の単品名に統一（旧称：りんごビール）。</p>
-  </div>
-  <div class="sec">
-    <h2><span class="secnum">05</span>セット商品（自社HP）｜1本あたり単価</h2>
-    <div style="overflow-x:auto">
-    <table>
-      <thead><tr>
-        <th class="l">セット商品名</th><th class="l">区分</th><th>セット価格</th><th>1本あたり単価</th><th class="l">内訳</th>
-      </tr></thead>
-      <tbody id="stable"></tbody>
-    </table>
-    </div>
-    <p class="count" style="margin-top:8px">1本あたり単価は、内訳が確定したセットのみ自動計算しています。「要確認」は本数・組合せの確認後に反映します。</p>
-  </div>
-</section>
-
-<footer>データ元：顧客管理シート／販売チャネル一覧／自社HP（yottette-caffe.com）　｜　更新日 2026-07-09　｜　産直アウル・ふるさと納税の価格は反映待ち。</footer>
+<footer>データ元：顧客管理シート／販売チャネル一覧　｜　更新日 2026-07-09</footer>
 </div>
 
 <script>
-const DATA = {"partners": [{"no": 1, "name": "事業者名", "gyotai": "要確認", "area": "その他", "status": "要確認", "tanto": "担当者名", "tel": "電話番号", "addr": "住所・所在地", "url": "WebサイトなどURL", "memo": "メモ"}, {"no": 2, "name": "株式会社米沢牛黄木", "gyotai": "ギフト・卸", "area": "米沢", "status": "要確認", "tanto": "手塚聡子 / 黄木果奈", "tel": "0238-22-4122", "addr": "〒992-0017 山形県米沢市桜木町3-41", "url": "", "memo": "法人営業部 主査 飲料部 金剛閣"}, {"no": 3, "name": "株式会社上杉コーポレーション", "gyotai": "要確認", "area": "米沢", "status": "要確認", "tanto": "遠藤勲 / 渡邊直彦 / 大木拓也", "tel": "0238-23-0700", "addr": "〒992-0052 山形県米沢市丸の内1丁目1番22号", "url": "", "memo": "代表 営業企画部 部長 営業部 部長"}, {"no": 4, "name": "有限会社べにはな", "gyotai": "要確認", "area": "米沢", "status": "要確認", "tanto": "小林智教", "tel": "0238-23-3106", "addr": "〒992-0045 山形県米沢市中央5丁目2-48", "url": "", "memo": "代表"}, {"no": 5, "name": "亀屋万年閣", "gyotai": "宿泊・旅館", "area": "米沢", "status": "要確認", "tanto": "柚木梨絵", "tel": "0238-32-2011", "addr": "〒992-0076 山形県米沢市小野川町2481", "url": "", "memo": ""}, {"no": 6, "name": "山川屋商店", "gyotai": "小売・スーパー", "area": "米沢", "status": "要確認", "tanto": "", "tel": "", "addr": "〒992-0076 山形県米沢市小野川町2433", "url": "", "memo": ""}, {"no": 7, "name": "いわせ商店", "gyotai": "小売・スーパー", "area": "米沢", "status": "要確認", "tanto": "", "tel": "", "addr": "〒992-0076 山形県米沢市小野川町2491", "url": "", "memo": ""}, {"no": 8, "name": "居酒屋エール", "gyotai": "飲食店", "area": "米沢", "status": "要確認", "tanto": "", "tel": "080-8211-6819", "addr": "〒992-0045 山形県米沢市中央3丁目10-23", "url": "", "memo": ""}, {"no": 9, "name": "CafeNANOKA IzakayaNANOKA BarNANOKA", "gyotai": "飲食店", "area": "—", "status": "要確認", "tanto": "高橋優磨", "tel": "080-6030-0758", "addr": "", "url": "", "memo": "店長"}, {"no": 10, "name": "株式会社宝寿の湯", "gyotai": "宿泊・旅館", "area": "米沢", "status": "要確認", "tanto": "関谷寿宣", "tel": "0238-32-2214", "addr": "〒992-0076 山形県米沢市小野川町2584", "url": "", "memo": "代表"}, {"no": 11, "name": "高砂屋", "gyotai": "宿泊・旅館", "area": "米沢", "status": "要確認", "tanto": "奥山琢", "tel": "0238-32-2224", "addr": "〒992-0076 山形県米沢市小野川町2427", "url": "", "memo": "専務取締役 若旦那"}, {"no": 12, "name": "丹波館", "gyotai": "宿泊・旅館", "area": "置賜(米沢以外)", "status": "要確認", "tanto": "岡崎絵美", "tel": "0238-43-3000", "addr": "〒999-2211 山形県南陽市赤湯1014", "url": "", "memo": "若女将"}, {"no": 13, "name": "鷹山公", "gyotai": "要確認", "area": "米沢", "status": "要確認", "tanto": "", "tel": "", "addr": "〒992-0027 山形県米沢市駅前2丁目1-38", "url": "", "memo": ""}, {"no": 14, "name": "山形座瀧波", "gyotai": "宿泊・旅館", "area": "置賜(米沢以外)", "status": "要確認", "tanto": "南浩史", "tel": "0238-43-6111", "addr": "〒999-2211 山形県南陽市赤湯3005", "url": "", "memo": "CEO"}, {"no": 15, "name": "米沢観光コンベンション協会", "gyotai": "自治体・団体", "area": "米沢", "status": "要確認", "tanto": "宮坂宏", "tel": "0238-21-6226", "addr": "〒992-0052 山形県米沢市丸の内1-4-13", "url": "", "memo": "会長"}, {"no": 16, "name": "株式会社山形アドビューロ", "gyotai": "要確認", "area": "山形県内(その他)", "status": "要確認", "tanto": "橋本駿悟", "tel": "023-641-2160 / (担当者)090-4882-4253", "addr": "〒990-0042 山形県山形市七日町4-16-18", "url": "", "memo": "担当者"}, {"no": 17, "name": "ジャックスブルワリー", "gyotai": "製造・醸造", "area": "—", "status": "要確認", "tanto": "", "tel": "", "addr": "", "url": "", "memo": ""}, {"no": 18, "name": "有限会社大浦葡萄酒", "gyotai": "製造・醸造", "area": "—", "status": "要確認", "tanto": "", "tel": "", "addr": "", "url": "", "memo": ""}, {"no": 19, "name": "株式会社丸定", "gyotai": "要確認", "area": "—", "status": "要確認", "tanto": "", "tel": "", "addr": "", "url": "", "memo": ""}, {"no": 20, "name": "源七 遠藤商店", "gyotai": "小売・スーパー", "area": "置賜(米沢以外)", "status": "要確認", "tanto": "遠藤奈津子", "tel": "0238-85-2281", "addr": "〒992-0772 山形県西置賜郡白鷹町横田尻1450", "url": "", "memo": ""}, {"no": 21, "name": "株式会社and", "gyotai": "要確認", "area": "関西", "status": "要確認", "tanto": "吉田隆紀", "tel": "090-9481-8847", "addr": "〒550-0003 大阪府福島区福島7-20-18", "url": "", "memo": "代表"}, {"no": 22, "name": "山陰三ツ星マーケット", "gyotai": "小売・スーパー", "area": "その他", "status": "要確認", "tanto": "渡世唱子", "tel": "090-3747-9918", "addr": "〒680-8601 鳥取県鳥取市今町2-151", "url": "", "memo": "代表理事"}, {"no": 23, "name": "米沢市観光課\n米沢市観光キャンペーン推進協議会", "gyotai": "自治体・団体", "area": "—", "status": "要確認", "tanto": "", "tel": "", "addr": "", "url": "", "memo": ""}, {"no": 24, "name": "株式会社NTS", "gyotai": "ギフト・卸", "area": "米沢", "status": "要確認", "tanto": "遠藤勇市 / 中村政彦 / 鈴木隆行", "tel": "(本社)0238-24-8660 / (センター)0238-22-7255", "addr": "〒992-0021 山形県米沢市花沢882-1(本社)", "url": "", "memo": "専務執行役員 営業企画部長 090-6457-7705 ギフト部 部長 080-9252-7331"}, {"no": 25, "name": "株式会社まほろば", "gyotai": "要確認", "area": "置賜(米沢以外)", "status": "要確認", "tanto": "島津祐介 / 齋藤玲子", "tel": "0238-47-2172", "addr": "〒992-0472 山形県南陽市宮内3476-1", "url": "", "memo": "取締役 担当者"}, {"no": 26, "name": "株式会社Rest", "gyotai": "要確認", "area": "米沢", "status": "要確認", "tanto": "横山森之 / 井上諭 / 横山森一", "tel": "0238-40-0778", "addr": "〒992-0042 山形県米沢市塩井町塩野1489-15", "url": "", "memo": "代表 設計 監理 土木部"}, {"no": 27, "name": "ふる山", "gyotai": "要確認", "area": "米沢", "status": "要確認", "tanto": "渡部孝宏", "tel": "090-6456-2474", "addr": "〒992-0012 山形県米沢市金池５丁目６−１７", "url": "", "memo": ""}, {"no": 28, "name": "株式会社オオゼキ", "gyotai": "小売・スーパー", "area": "関東", "status": "要確認", "tanto": "石岡学 / 登内貴士", "tel": "03-6407-2411", "addr": "〒155-0031 東京都世田谷区北沢2-9-21", "url": "", "memo": "第二営業部 グロッサリー部門 副統括 第二営業部 グロッサリー部門"}, {"no": 29, "name": "有限会社新杵屋", "gyotai": "ギフト・卸", "area": "東北(県外)", "status": "要確認", "tanto": "星光秀", "tel": "022-256-0028", "addr": "〒983-0045 宮城県仙台市宮城野区宮城野1丁目4-12", "url": "", "memo": ""}, {"no": 30, "name": "ANAフーズ株式会社", "gyotai": "ギフト・卸", "area": "関東", "status": "要確認", "tanto": "金子由美子 / 藤岡瑞希 / 笠原健", "tel": "03-6852-0113", "addr": "〒105-7140 東京都港区東新橋1-5-2", "url": "", "memo": "企画食品本部 リテール営業部 チームリーダー 企画食品本部 ギフト営業部 企画食品本部 リテール営業部"}, {"no": 31, "name": "JR東日本東北総合サービス株式会社", "gyotai": "ギフト・卸", "area": "東北(県外)", "status": "要確認", "tanto": "高橋幸恵 / 伊藤千恵美", "tel": "022-354-1577", "addr": "〒983-0864 宮城県仙台市宮城野区名掛丁200-6", "url": "", "memo": "仙台営業所 営業ユニット 主任 仙台営業所 東北めぐり いろといろ 店長"}, {"no": 32, "name": "NPO法人 学童保育所 しゃぼん玉クラブ事務局", "gyotai": "自治体・団体", "area": "米沢", "status": "要確認", "tanto": "土屋博 / 中村さん", "tel": "0238-20-5001 / 090-6160-7216", "addr": "〒992-0056 山形県米沢市直江町5-49", "url": "", "memo": "事務局長・支援員 担当者"}, {"no": 33, "name": "旭食品", "gyotai": "ギフト・卸", "area": "関東", "status": "要確認", "tanto": "こいぬまさん", "tel": "", "addr": "〒216-0034 神奈川県川崎市宮前区梶ケ谷1090", "url": "", "memo": ""}, {"no": 34, "name": "株式会社　FRACTALE", "gyotai": "飲食店", "area": "関東", "status": "要確認", "tanto": "坂田隆史 / 立山智範", "tel": "03-3868-3596 / 03-3868-3597", "addr": "〒113-0033 東京都文京区本郷4-1-7", "url": "www.fractale-jpn.com", "memo": "さぬまやの庭、茨木竜ケ崎にてカフェ展開 世界的ガーデンデザイナー石橋とのタッグ"}, {"no": 35, "name": "株式会社やまがた物産振興機構", "gyotai": "小売・スーパー", "area": "置賜(米沢以外)", "status": "要確認", "tanto": "田中由貴 / 齋藤美紀子 / 伊藤幸子 / 藤巻葵和", "tel": "0238-83-2201 / 0238-83-3305", "addr": "〒993-0015 山形県長井市四谷2丁目1番26号", "url": "www.yamagata-kikou.co.jp", "memo": "カタログギフト、百貨店、大手スーパーなどへのギフト販売"}], "singles": [{"name": "フルーツクラフトコーラ りんご", "kikaku": "150ml", "oroshi": 1170, "hp": 1800, "owl": null, "fk": null, "fn": null, "memo": ""}, {"name": "フルーツクラフトコーラ もも", "kikaku": "150ml", "oroshi": 1170, "hp": 1800, "owl": null, "fk": null, "fn": null, "memo": ""}, {"name": "フルーツクラフトコーラ ラフランス", "kikaku": "150ml", "oroshi": 1170, "hp": 1800, "owl": null, "fk": null, "fn": null, "memo": ""}, {"name": "フルーツクラフトコーラ さくらんぼ", "kikaku": "150ml", "oroshi": 1170, "hp": 1800, "owl": null, "fk": null, "fn": null, "memo": ""}, {"name": "フルーツクラフトコーラ 紅玉", "kikaku": "150ml", "oroshi": 1495, "hp": 2300, "owl": null, "fk": null, "fn": null, "memo": ""}, {"name": "フルーツクラフトコーラ りんごパウチ", "kikaku": "100ml", "oroshi": 585, "hp": 850, "owl": null, "fk": null, "fn": null, "memo": ""}, {"name": "フルーツクラフトコーラ ももパウチ", "kikaku": "100ml", "oroshi": 585, "hp": 850, "owl": null, "fk": null, "fn": null, "memo": ""}, {"name": "フルーツクラフトコーラ ラフランスパウチ", "kikaku": "100ml", "oroshi": 585, "hp": 850, "owl": null, "fk": null, "fn": null, "memo": ""}, {"name": "フルーツクラフトコーラ さくらんぼパウチ", "kikaku": "100ml", "oroshi": 585, "hp": 850, "owl": null, "fk": null, "fn": null, "memo": ""}, {"name": "りんごジュース", "kikaku": "720ml", "oroshi": 650, "hp": 1000, "owl": null, "fk": null, "fn": null, "memo": ""}, {"name": "ラフランスジュース", "kikaku": "720ml", "oroshi": 910, "hp": 1400, "owl": null, "fk": null, "fn": null, "memo": ""}, {"name": "よってってシードル（旧：りんごビール）", "kikaku": "330ml", "oroshi": 900, "hp": 1200, "owl": null, "fk": null, "fn": null, "memo": "自社HP「お酒」の単品名に統一。旧称=りんごビール"}, {"name": "舘山りんご酢", "kikaku": "500ml", "oroshi": 980, "hp": 1500, "owl": null, "fk": null, "fn": null, "memo": "2026/4新発売。500mlパウチ"}, {"name": "りんごクラフトコーラ 1000mlパウチ", "kikaku": "1000ml", "oroshi": 4700, "hp": null, "owl": null, "fk": null, "fn": null, "memo": "卸のみ"}, {"name": "さくらんぼクラフトコーラ 1000mlパウチ", "kikaku": "1000ml", "oroshi": 4700, "hp": null, "owl": null, "fk": null, "fn": null, "memo": "卸のみ"}, {"name": "プレミアムリンゴ酢", "kikaku": "1000ml", "oroshi": 2500, "hp": null, "owl": null, "fk": null, "fn": null, "memo": "卸のみ"}, {"name": "りんごジュース 一升瓶", "kikaku": "1800ml", "oroshi": 1600, "hp": null, "owl": null, "fk": null, "fn": null, "memo": "卸のみ"}], "sets": [{"name": "りんご酢セット（家庭用）", "cat": "セット商品", "setp": 2400, "unit": 1200, "comp": "舘山りんご酢500ml×2"}, {"name": "りんご酢セット（ギフト用）", "cat": "セット商品", "setp": 3800, "unit": null, "comp": "要確認"}, {"name": "りんごジュースとりんご酢セット", "cat": "セット商品", "setp": 2800, "unit": null, "comp": "要確認"}, {"name": "りんごジュースとコーラ2本セット", "cat": "セット商品", "setp": 5000, "unit": null, "comp": "要確認"}, {"name": "りんごジュースとりんご酢とコーラセット", "cat": "セット商品", "setp": 5000, "unit": null, "comp": "要確認"}, {"name": "りんごジュース2本とりんご酢セット", "cat": "セット商品", "setp": 4200, "unit": null, "comp": "要確認"}, {"name": "りんごジュース2本とコーラ2本セット", "cat": "セット商品", "setp": 6200, "unit": null, "comp": "要確認（計4本）"}, {"name": "りんご酢とコーラ2本セット", "cat": "セット商品", "setp": 5700, "unit": null, "comp": "要確認"}, {"name": "りんご酢2本とコーラ2本セット", "cat": "セット商品", "setp": 7200, "unit": null, "comp": "要確認（計4本）"}, {"name": "数量限定｜紅玉クラフトコーラセット", "cat": "クラフトコーラ", "setp": 4600, "unit": null, "comp": "要確認"}, {"name": "りんごクラフトコーラセット", "cat": "クラフトコーラ", "setp": 3800, "unit": null, "comp": "りんごコーラ150ml×2（要確認）"}, {"name": "りんごクラフトコーラ パウチ3本セット", "cat": "クラフトコーラ", "setp": 2550, "unit": 850, "comp": "りんごコーラ100ml×3"}, {"name": "りんご/ラ・フランス ジュースセット", "cat": "100%ジュース", "setp": 2400, "unit": null, "comp": "要確認"}, {"name": "りんご/ラ・フランス ジュースセット（ギフト用）", "cat": "100%ジュース", "setp": 3000, "unit": null, "comp": "要確認"}, {"name": "りんごジュースセット（ギフト用）", "cat": "100%ジュース", "setp": 2800, "unit": null, "comp": "要確認"}, {"name": "りんごジュースセット", "cat": "100%ジュース", "setp": 2500, "unit": null, "comp": "要確認"}, {"name": "よってってシードル3本セット", "cat": "お酒", "setp": 3600, "unit": 1200, "comp": "シードル330ml×3"}]};
+const DATA = {"partners": [{"no": 2, "name": "株式会社米沢牛黄木", "gyotai": "ギフト・卸", "area": "米沢", "status": "要確認", "tanto": "手塚聡子 / 黄木果奈", "tel": "0238-22-4122", "addr": "〒992-0017 山形県米沢市桜木町3-41", "url": "", "memo": "法人営業部 主査 飲料部 金剛閣"}, {"no": 3, "name": "株式会社上杉コーポレーション", "gyotai": "要確認", "area": "米沢", "status": "要確認", "tanto": "遠藤勲 / 渡邊直彦 / 大木拓也", "tel": "0238-23-0700", "addr": "〒992-0052 山形県米沢市丸の内1丁目1番22号", "url": "", "memo": "代表 営業企画部 部長 営業部 部長"}, {"no": 4, "name": "有限会社べにはな", "gyotai": "要確認", "area": "米沢", "status": "要確認", "tanto": "小林智教", "tel": "0238-23-3106", "addr": "〒992-0045 山形県米沢市中央5丁目2-48", "url": "", "memo": "代表"}, {"no": 5, "name": "亀屋万年閣", "gyotai": "宿泊・旅館", "area": "米沢", "status": "要確認", "tanto": "柚木梨絵", "tel": "0238-32-2011", "addr": "〒992-0076 山形県米沢市小野川町2481", "url": "", "memo": ""}, {"no": 6, "name": "山川屋商店", "gyotai": "小売・スーパー", "area": "米沢", "status": "要確認", "tanto": "", "tel": "", "addr": "〒992-0076 山形県米沢市小野川町2433", "url": "", "memo": ""}, {"no": 7, "name": "いわせ商店", "gyotai": "小売・スーパー", "area": "米沢", "status": "要確認", "tanto": "", "tel": "", "addr": "〒992-0076 山形県米沢市小野川町2491", "url": "", "memo": ""}, {"no": 8, "name": "居酒屋エール", "gyotai": "飲食店", "area": "米沢", "status": "要確認", "tanto": "", "tel": "080-8211-6819", "addr": "〒992-0045 山形県米沢市中央3丁目10-23", "url": "", "memo": ""}, {"no": 9, "name": "CafeNANOKA IzakayaNANOKA BarNANOKA", "gyotai": "飲食店", "area": "—", "status": "要確認", "tanto": "高橋優磨", "tel": "080-6030-0758", "addr": "", "url": "", "memo": "店長"}, {"no": 10, "name": "株式会社宝寿の湯", "gyotai": "宿泊・旅館", "area": "米沢", "status": "要確認", "tanto": "関谷寿宣", "tel": "0238-32-2214", "addr": "〒992-0076 山形県米沢市小野川町2584", "url": "", "memo": "代表"}, {"no": 11, "name": "高砂屋", "gyotai": "宿泊・旅館", "area": "米沢", "status": "要確認", "tanto": "奥山琢", "tel": "0238-32-2224", "addr": "〒992-0076 山形県米沢市小野川町2427", "url": "", "memo": "専務取締役 若旦那"}, {"no": 12, "name": "丹波館", "gyotai": "宿泊・旅館", "area": "置賜(米沢以外)", "status": "要確認", "tanto": "岡崎絵美", "tel": "0238-43-3000", "addr": "〒999-2211 山形県南陽市赤湯1014", "url": "", "memo": "若女将"}, {"no": 13, "name": "鷹山公", "gyotai": "要確認", "area": "米沢", "status": "要確認", "tanto": "", "tel": "", "addr": "〒992-0027 山形県米沢市駅前2丁目1-38", "url": "", "memo": ""}, {"no": 14, "name": "山形座瀧波", "gyotai": "宿泊・旅館", "area": "置賜(米沢以外)", "status": "要確認", "tanto": "南浩史", "tel": "0238-43-6111", "addr": "〒999-2211 山形県南陽市赤湯3005", "url": "", "memo": "CEO"}, {"no": 15, "name": "米沢観光コンベンション協会", "gyotai": "自治体・団体", "area": "米沢", "status": "要確認", "tanto": "宮坂宏", "tel": "0238-21-6226", "addr": "〒992-0052 山形県米沢市丸の内1-4-13", "url": "", "memo": "会長"}, {"no": 16, "name": "株式会社山形アドビューロ", "gyotai": "要確認", "area": "山形県内(その他)", "status": "要確認", "tanto": "橋本駿悟", "tel": "023-641-2160 / (担当者)090-4882-4253", "addr": "〒990-0042 山形県山形市七日町4-16-18", "url": "", "memo": "担当者"}, {"no": 17, "name": "ジャックスブルワリー", "gyotai": "製造・醸造", "area": "—", "status": "要確認", "tanto": "", "tel": "", "addr": "", "url": "", "memo": ""}, {"no": 18, "name": "有限会社大浦葡萄酒", "gyotai": "製造・醸造", "area": "—", "status": "要確認", "tanto": "", "tel": "", "addr": "", "url": "", "memo": ""}, {"no": 19, "name": "株式会社丸定", "gyotai": "要確認", "area": "—", "status": "要確認", "tanto": "", "tel": "", "addr": "", "url": "", "memo": ""}, {"no": 20, "name": "源七 遠藤商店", "gyotai": "小売・スーパー", "area": "置賜(米沢以外)", "status": "要確認", "tanto": "遠藤奈津子", "tel": "0238-85-2281", "addr": "〒992-0772 山形県西置賜郡白鷹町横田尻1450", "url": "", "memo": ""}, {"no": 21, "name": "株式会社and", "gyotai": "要確認", "area": "関西", "status": "要確認", "tanto": "吉田隆紀", "tel": "090-9481-8847", "addr": "〒550-0003 大阪府福島区福島7-20-18", "url": "", "memo": "代表"}, {"no": 22, "name": "山陰三ツ星マーケット", "gyotai": "小売・スーパー", "area": "その他", "status": "要確認", "tanto": "渡世唱子", "tel": "090-3747-9918", "addr": "〒680-8601 鳥取県鳥取市今町2-151", "url": "", "memo": "代表理事"}, {"no": 23, "name": "米沢市観光課\n米沢市観光キャンペーン推進協議会", "gyotai": "自治体・団体", "area": "—", "status": "要確認", "tanto": "", "tel": "", "addr": "", "url": "", "memo": ""}, {"no": 24, "name": "株式会社NTS", "gyotai": "ギフト・卸", "area": "米沢", "status": "要確認", "tanto": "遠藤勇市 / 中村政彦 / 鈴木隆行", "tel": "(本社)0238-24-8660 / (センター)0238-22-7255", "addr": "〒992-0021 山形県米沢市花沢882-1(本社)", "url": "", "memo": "専務執行役員 営業企画部長 090-6457-7705 ギフト部 部長 080-9252-7331"}, {"no": 25, "name": "株式会社まほろば", "gyotai": "要確認", "area": "置賜(米沢以外)", "status": "要確認", "tanto": "島津祐介 / 齋藤玲子", "tel": "0238-47-2172", "addr": "〒992-0472 山形県南陽市宮内3476-1", "url": "", "memo": "取締役 担当者"}, {"no": 26, "name": "株式会社Rest", "gyotai": "要確認", "area": "米沢", "status": "要確認", "tanto": "横山森之 / 井上諭 / 横山森一", "tel": "0238-40-0778", "addr": "〒992-0042 山形県米沢市塩井町塩野1489-15", "url": "", "memo": "代表 設計 監理 土木部"}, {"no": 27, "name": "ふる山", "gyotai": "要確認", "area": "米沢", "status": "要確認", "tanto": "渡部孝宏", "tel": "090-6456-2474", "addr": "〒992-0012 山形県米沢市金池５丁目６−１７", "url": "", "memo": ""}, {"no": 28, "name": "株式会社オオゼキ", "gyotai": "小売・スーパー", "area": "関東", "status": "要確認", "tanto": "石岡学 / 登内貴士", "tel": "03-6407-2411", "addr": "〒155-0031 東京都世田谷区北沢2-9-21", "url": "", "memo": "第二営業部 グロッサリー部門 副統括 第二営業部 グロッサリー部門"}, {"no": 29, "name": "有限会社新杵屋", "gyotai": "ギフト・卸", "area": "東北(県外)", "status": "要確認", "tanto": "星光秀", "tel": "022-256-0028", "addr": "〒983-0045 宮城県仙台市宮城野区宮城野1丁目4-12", "url": "", "memo": ""}, {"no": 30, "name": "ANAフーズ株式会社", "gyotai": "ギフト・卸", "area": "関東", "status": "要確認", "tanto": "金子由美子 / 藤岡瑞希 / 笠原健", "tel": "03-6852-0113", "addr": "〒105-7140 東京都港区東新橋1-5-2", "url": "", "memo": "企画食品本部 リテール営業部 チームリーダー 企画食品本部 ギフト営業部 企画食品本部 リテール営業部"}, {"no": 31, "name": "JR東日本東北総合サービス株式会社", "gyotai": "ギフト・卸", "area": "東北(県外)", "status": "要確認", "tanto": "高橋幸恵 / 伊藤千恵美", "tel": "022-354-1577", "addr": "〒983-0864 宮城県仙台市宮城野区名掛丁200-6", "url": "", "memo": "仙台営業所 営業ユニット 主任 仙台営業所 東北めぐり いろといろ 店長"}, {"no": 32, "name": "NPO法人 学童保育所 しゃぼん玉クラブ事務局", "gyotai": "自治体・団体", "area": "米沢", "status": "要確認", "tanto": "土屋博 / 中村さん", "tel": "0238-20-5001 / 090-6160-7216", "addr": "〒992-0056 山形県米沢市直江町5-49", "url": "", "memo": "事務局長・支援員 担当者"}, {"no": 33, "name": "旭食品", "gyotai": "ギフト・卸", "area": "関東", "status": "要確認", "tanto": "こいぬまさん", "tel": "", "addr": "〒216-0034 神奈川県川崎市宮前区梶ケ谷1090", "url": "", "memo": ""}, {"no": 34, "name": "株式会社　FRACTALE", "gyotai": "飲食店", "area": "関東", "status": "要確認", "tanto": "坂田隆史 / 立山智範", "tel": "03-3868-3596 / 03-3868-3597", "addr": "〒113-0033 東京都文京区本郷4-1-7", "url": "www.fractale-jpn.com", "memo": "さぬまやの庭、茨木竜ケ崎にてカフェ展開 世界的ガーデンデザイナー石橋とのタッグ"}, {"no": 35, "name": "株式会社やまがた物産振興機構", "gyotai": "小売・スーパー", "area": "置賜(米沢以外)", "status": "要確認", "tanto": "田中由貴 / 齋藤美紀子 / 伊藤幸子 / 藤巻葵和", "tel": "0238-83-2201 / 0238-83-3305", "addr": "〒993-0015 山形県長井市四谷2丁目1番26号", "url": "www.yamagata-kikou.co.jp", "memo": "カタログギフト、百貨店、大手スーパーなどへのギフト販売"}]};
 const GYO=["宿泊・旅館","飲食店","小売・スーパー","ギフト・卸","百貨店・催事","EC・通販","自治体・団体","製造・醸造","その他","要確認"];
 const AREA=["米沢","置賜(米沢以外)","山形県内(その他)","東北(県外)","関東","関西","その他","—"];
 const BADGE={"宿泊・旅館":"#C0392B","飲食店":"#C1953F","小売・スーパー":"#4C86C1","ギフト・卸":"#7B2D26","百貨店・催事":"#8E44AD","EC・通販":"#16A085","自治体・団体":"#5D6D7E","製造・醸造":"#A0522D","その他":"#9C8B7F","要確認":"#B7A99B"};
 const STBADGE={"取引中":"#2E7D32","商談中":"#C1953F","見込み":"#4C86C1","休止":"#9C8B7F","要確認":"#B7A99B"};
 const yen=n=>n==null?'':'¥'+Number(n).toLocaleString();
 const esc=s=>(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
-
-document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
-  document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===t));
-  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id===t.dataset.tab));
-});
 
 const P=DATA.partners;
 const cnt=(k,v)=>P.filter(x=>x[k]===v).length;
@@ -210,34 +172,6 @@ fbox.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{
 });
 document.getElementById('q').addEventListener('input',render);
 render();
-
-const SG=DATA.singles, ST=DATA.sets;
-const hpvals=SG.filter(x=>x.hp!=null);
-const owlvals=SG.filter(x=>x.owl!=null);
-const fkvals=SG.filter(x=>x.fk!=null);
-const pcards=[["単品数",SG.length],["自社HP登録",hpvals.length],["産直アウル登録",owlvals.length],["ふるさと納税掲載",fkvals.length]];
-document.getElementById('pstats').innerHTML=pcards.map(c=>
-  `<div class="stat"><div class="n">${c[1]}</div><div class="l">${c[0]}</div></div>`).join('');
-const pend='<span class="pending">データ待ち</span>';
-const cell=v=>v!=null?`<span class="money">${yen(v)}</span>`:pend;
-document.getElementById('ptable').innerHTML=SG.map(x=>`
-  <tr>
-    <td class="l" style="font-weight:700;color:var(--deep)">${esc(x.name)}</td>
-    <td class="num" style="color:var(--mute)">${esc(x.kikaku)}</td>
-    <td><span class="num" style="color:var(--mute)">${x.oroshi!=null?yen(x.oroshi):'—'}</span></td>
-    <td>${x.hp!=null?'<span class="money">'+yen(x.hp)+'</span>':'<span style="color:var(--mute)">—</span>'}</td>
-    <td>${cell(x.owl)}</td>
-    <td>${cell(x.fk)}</td>
-    <td>${cell(x.fn)}</td>
-  </tr>`).join('');
-document.getElementById('stable').innerHTML=ST.map(x=>`
-  <tr>
-    <td class="l" style="font-weight:700;color:var(--deep)">${esc(x.name)}</td>
-    <td class="l" style="color:var(--mute);font-size:12px">${esc(x.cat)}</td>
-    <td><span class="money">${yen(x.setp)}</span></td>
-    <td>${x.unit!=null?'<span class="net">'+yen(x.unit)+'</span>':'<span class="pending">要確認</span>'}</td>
-    <td class="l" style="color:var(--mute);font-size:12px">${esc(x.comp)}</td>
-  </tr>`).join('');
 </script>
 </body>
 </html>
